@@ -21,6 +21,47 @@ npm run client
 
 Between the server and client, you'll need two terminal tabs! Because we're using `nodemon`, both our client side and server side will automatically spin back up when changes are made!
 
+#### CHECKLIST!!
+DOM/REACT
+[] INPUT COMPONENT
+  [] input fields
+    []item
+    []quantity
+    []unit
+  [] useState - set input to var
+  [] save button (POST)
+[] SHOPPING LIST COMPONENT (GET)
+  []reset button (PUT)
+  []clear button (DELETE)
+
+  [] SHOPPING ITEM COMPONENT (render)
+    []display item name
+    []display item unit
+    []buy button (PUT)
+    []remove button (DELETE)
+
+APP JSX
+[] USE EFFECT - initial render of list
+[] useState - create LIST to put db data into
+[] GET AXIOS
+  [] props to SHOPPING LIST
+    [] props to SHOPPING ITEM (render)
+[] POST AXIOS
+  [] props to INPUT COMP on (saveBtnClick)
+[] DELETE AXIOS
+  [] props to SHOPPING LIST (clearBtn)
+    [] props to SHOPPING ITEM (removeItemBtn)
+[] PUT AXIOS
+  [] props to SHOPPING LIST COMP (resetBtn)
+    [] props to SHOPPING ITEM (buyBtn)
+
+ROUTER
+[] GET
+[] POST
+[] DELETE
+[] PUT
+
+
 ## BASE MODE
 
 For this project you will create a gallery page to share pictures of things that are important to you. Visitors can click on an image to see a description and use a button to "like" an image. 
