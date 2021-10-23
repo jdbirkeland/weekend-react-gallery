@@ -10,7 +10,6 @@ function GalleryItem({galleryItem, fetchList, list, likePic}) {
         <div><button onClick={() => likePic(galleryItem)}>Like</button></div>
         <p>Likes: <span>{galleryItem.likes}</span></p>
     </div>
-
     </>
     )
 }
