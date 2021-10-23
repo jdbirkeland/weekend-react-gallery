@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import GalleryList from '../GalleryList/GalleryList';
-import GalleryItem from '../GalleryItem/GalleryItem';
+import GalleryList from '../GalleryList/GalleryList.jsx';
+import GalleryItem from '../GalleryItem/GalleryItem.jsx';
 
 function App() {
 
@@ -15,20 +15,20 @@ function App() {
   const fetchList = () => {
     axios({
       method: 'GET',
-      url: '/list'
+      url: '/like'
     }).then((response) => {
       console.log('entire response', response);
       setGalleryList(response.data)
     }).catch(function (error) {
       console.log('Error on GET', error);
-    })//end fetchList/GET
-  }
+    })
+  } //end fetchList/GET
 
   const addItem = (newItem) => {
     console.log(newItem);
     axios({
       method: 'POST',
-      url: '/list',
+      url: '/like',
       data: newItem
     }).then(response => {
       console.log('response is', response);
@@ -38,6 +38,19 @@ function App() {
     });
   }; //end addItem/POST  
 
+  const likePic = () => {
+    axios ({
+      method: 'PUT',
+      url: '/like/${list.id}'
+    }).then((response) => {
+      console.log('liked Pic', response);
+      fetchList();
+    }).catch((error) => {
+      console.log('Error clearing list', error);
+    });
+  }
+
+  console.log('galleryList', galleryList);
   
 
     return (
@@ -45,7 +58,9 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p>Gallery goes here</p>
+        <GalleryList
+        list={galleryList}/>
+        <p></p>
         <img src="images/goat_small.jpg"/>
       </div>
     );
