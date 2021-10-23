@@ -1,11 +1,14 @@
 import './GalleryItem.css'
 
-function GalleryItem({newItem}) {
+function GalleryItem({galleryItem, fetchList, list, likePic}) {
 
     return(<>
     <div className="newItem">
-        <h3>{newItem.description}</h3>
-        <button>like pick</button>
+    
+        <h3>{galleryItem.description}</h3>
+        <div><img className="photo" src={galleryItem.path} alt="Goat" /></div>
+        <div><button onClick={() => likePic(galleryItem)}>Like</button></div>
+        <p>Likes: <span>{galleryItem.likes}</span></p>
     </div>
 
     </>

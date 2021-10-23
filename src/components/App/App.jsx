@@ -11,11 +11,12 @@ function App() {
   }, []) //end useEffect
 
   let [galleryList, setGalleryList] = useState([]);
+  // let [galleryItems, setGalleryItems] = useState([]);
 
   const fetchList = () => {
     axios({
       method: 'GET',
-      url: '/like'
+      url: '/gallery'
     }).then((response) => {
       console.log('entire response', response);
       setGalleryList(response.data)
@@ -28,7 +29,7 @@ function App() {
     console.log(newItem);
     axios({
       method: 'POST',
-      url: '/like',
+      url: '/gallery',
       data: newItem
     }).then(response => {
       console.log('response is', response);
@@ -38,10 +39,10 @@ function App() {
     });
   }; //end addItem/POST  
 
-  const likePic = () => {
+  const likePic = (galleryItem) => {
     axios ({
       method: 'PUT',
-      url: '/like/${list.id}'
+      url: `/gallery/like/${galleryItem.id}`
     }).then((response) => {
       console.log('liked Pic', response);
       fetchList();
@@ -59,9 +60,11 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <GalleryList
-        list={galleryList}/>
+        list={galleryList}
+        fetchList={fetchList}
+        likePic={likePic}
+        />
         <p></p>
-        <img src="images/goat_small.jpg"/>
       </div>
     );
 }
