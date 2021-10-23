@@ -30,5 +30,5 @@ function GalleryItem({ galleryItem, fetchList, list, likePic, picDescript }) {
     </>
     )
 }
-
+ 
 export default GalleryItem;
