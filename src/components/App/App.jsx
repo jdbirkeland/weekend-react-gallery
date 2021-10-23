@@ -51,6 +51,19 @@ function App() {
     });
   }
 
+  // const picDescprit = (galleryItem) => {
+  //   axios ({
+  //     method: 'PUT',
+  //     url: `/gallery/like/${galleryItem.path}`
+  //   }).then((response) => {
+  //     console.log('Pic description', response);
+  //     fetchList();
+  //   }).catch((error) => {
+  //     console.log('Error clearing list', error);
+  //   });
+  // }
+  
+
   console.log('galleryList', galleryList);
   
 
