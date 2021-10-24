@@ -4,8 +4,6 @@ import './GalleryList.css'
 function GalleryList({ list, fetchList, likePic, picDescript }) {
     return (
         <>
-            <h2>Gallery of Awesome!</h2>
-
             <div className="listDiv">
 
                 {

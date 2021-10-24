@@ -4,7 +4,19 @@ import './GalleryItem.css'
 function GalleryItem({ galleryItem, fetchList, list, likePic, picDescript }) {
 
     const [showDesc, setShowDesc] = useState(false);
+    const noLikes = ["No One Likes This Photo"]
+    const likesCounter =[<p className="likesCounter">Likes: <span>{galleryItem.likes}</span></p>]
+    // const newLikesCounter = noLikes.replace(noLikes,likesCounter);
     
+// const changeStatus = (noLikes) => {
+//     if(galleryItem.likes === 0) {
+//     onOneLikes = noLikes;}
+//     else {
+//     console.log('likesCounter');
+//     return [likesCounter];   
+// }
+// }
+
     const toggleDescription = () => {
         setShowDesc(!showDesc)
     }
@@ -18,17 +30,12 @@ function GalleryItem({ galleryItem, fetchList, list, likePic, picDescript }) {
             onClick={() => {toggleDescription() }}/>
             {showDesc && <div className="showDesc">{galleryItem.description}</div>}
         </div> 
-            {/* <div><button onClick={() => likePic(galleryItem)}>Like</button></div> */}
-            <button class="button" onClick={() => likePic(galleryItem)}>
-    <div class="hand">
-        <div class="thumb"></div>
-    </div>
-    <span>Like<span>d</span></span>
-</button>
-            <p>Likes: <span>{galleryItem.likes}</span></p>
+            <div><button onClick={() => likePic(galleryItem)}>Like</button></div>
+            {/* <p className="noOneLikes"> {noLikes} </p> */}
+            <p className="likesCounter">Likes: <span>{galleryItem.likes}</span></p>
         </div>
     </>
     )
 }
- 
+
 export default GalleryItem;
