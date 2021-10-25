@@ -24,8 +24,14 @@
 .newPic {
     position: relative;
     overflow-wrap: break-word;
-    
+    margin: 20px;
+    border: 10px solid ivory;
+    border-radius: 8px;
 }
+
+img:hover {
+    transform: scaleX(-1);
+  }
 
 .listDiv {
     display: flex;
