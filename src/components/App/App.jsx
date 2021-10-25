@@ -10,6 +10,8 @@ function App() {
     fetchList()
   }, []) //end useEffect
 
+  //hooks/state
+  //let[variable, setVariable] = useSTate(initialVariableValue)
   let [galleryList, setGalleryList] = useState([]);
   // let [galleryItems, setGalleryItems] = useState([]);
 

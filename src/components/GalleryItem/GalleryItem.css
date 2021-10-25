@@ -3,6 +3,8 @@
     width:  300px;
     height: 300px;
     object-fit: cover;
+    border: 8px solid ivory;
+    border-radius: 8px;
     
 }
 
@@ -25,8 +27,8 @@
     position: relative;
     overflow-wrap: break-word;
     margin: 20px;
-    border: 10px solid ivory;
-    border-radius: 8px;
+    padding: -10px;
+    display: block
 }
 
 img:hover {
